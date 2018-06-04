@@ -35,10 +35,50 @@ buttons.addEventListener('click', function (event) {
 	}
 	
 	else if (target.className == 'go') {
+		// $('.buttons').children().addClass("disable");
+		// setTimeout(function () {
+		// 	$('.buttons').children().removeClass("disable");
+		// }, 7000);
+
+		$('.rabbit').toggleClass('run');
+		$('.rabbit').toggleClass('run-away');
+		$('.rabbit').toggleClass('rabbit');
 		$('.buttons').children().addClass("disable");
+		//$('#audio').trigger('play');
 		setTimeout(function () {
+			$('.run').toggleClass('rabbit');
+			$('.rabbit').toggleClass('run');
+			$('.rabbit').toggleClass('run-away');
 			$('.buttons').children().removeClass("disable");
 		}, 7000);
+	}
+
+
+
+		else if (target.className == 'rabbit-damage') {
+	
+		$('.rabbit').toggleClass('damage');
+		$('.rabbit').toggleClass('rabbit');
+		$('.buttons').children().addClass("disable");
+		setTimeout(function () {
+			$('.damage').toggleClass('rabbit');
+			$('.rabbit').toggleClass('damage');
+			$('.buttons').children().removeClass("disable");
+		}, 600);
+	}
+
+
+
+			else if (target.className == 'rabbit-die') {
+	
+		$('.rabbit').toggleClass('lose');
+		$('.rabbit').toggleClass('rabbit');
+		$('.buttons').children().addClass("disable");
+		setTimeout(function () {
+			$('.lose').toggleClass('rabbit');
+			$('.rabbit').toggleClass('lose');
+			$('.buttons').children().removeClass("disable");
+		}, 1000);
 	}
 	
 });
