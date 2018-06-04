@@ -1,0 +1,297 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background-image: url(../img/bg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	overflow: hidden;
+}
+
+.buttons {
+	z-index: 2;
+	user-select: none;
+}
+
+button {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	background-color: tomato;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	margin: 50px;
+	transition: all .2s ease;
+	-webkit-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+button:hover {
+	background-color: red;
+}
+
+.container {
+	position: absolute;
+	left: 0px;
+	bottom: 10px;
+	width: 100%;
+	height: 200px;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0px 150px;
+	box-sizing: border-box;
+}
+
+.character-container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+
+.anticharacter-container {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	/*    background-color: red;  */
+}
+
+.ogr {
+	width: 184px;
+}
+
+.hero {
+	width: 138px;
+	position: relative;
+	z-index: 5;
+}
+
+.hand {
+	width: 34px;
+	position: absolute;
+	top: 110px;
+	right: 80px;
+	z-index: 4;
+	transition: all .2s ease;
+}
+
+.hand.active {
+	width: 34px;
+	position: absolute;
+	top: 87px;
+	right: 60px;
+	z-index: 4;
+	transform: rotate(-90deg);
+}
+
+.left-leg {
+	position: absolute;
+	bottom: -12px;
+	left: 61px;
+	z-index: 3;
+	transition: all .2s ease;
+	width: 44px;
+	height: 37px;
+}
+
+.active-left {
+	transform: rotate(-12deg);
+	left: 71px;
+}
+
+.active-right {
+	transform: rotate(-18deg);
+}
+
+.right-leg {
+	position: absolute;
+	bottom: -12px;
+	left: 30px;
+	z-index: 4;
+	transition: all .2s ease;
+	width: 44px;
+	height: 37px;
+}
+
+.fire {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	bottom: 20px;
+	right: 150px;
+}
+
+.fire img {
+	opacity: 0;
+	width: 400px;
+	position: relative;
+	bottom: 250px;
+	right: 81px;
+	transition: all .4s ease;
+}
+
+.fire img.show {
+	opacity: 1;
+}
+
+.thunder {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	bottom: 20px;
+	right: 150px;
+	transform: rotate(-50deg);
+}
+
+.thunder img {
+	opacity: 0;
+	width: 300px;
+	position: relative;
+	/* bottom: 250px; */
+	right: 45px;
+	transition: all .4s ease;
+}
+
+.thunder img.show {
+	opacity: 1;
+}
+
+.disable {
+	pointer-events: none;
+}
+
+
+/*
+
+canvas { 
+  height: 100vh; 
+  width: 100vw; 
+  display: block;
+	 background: transparent;
+    background-color: transparent;
+    background-image: none;
+}*/
+
+.rabbit {
+	animation: walk-cycle 1.5s steps(5) infinite;
+	background: url(../img/rabbit/Idle-sm1.png) -55px -16px no-repeat;
+	height: 170px;
+	width: 100px;
+	position: absolute;
+	left: 150px;
+	bottom: 0;
+	transition: all .2s ease;
+}
+
+@keyframes walk-cycle {
+	100% {
+		background-position: -1430px -16px;
+	}
+}
+
+.attack {
+	animation: rabbit-atack 5s steps(1) infinite;
+	background: url(../img/rabbit/attack.png) -77px -19px no-repeat;
+	width: 164px;
+	height: 173px;
+	position: absolute;
+	left: 150px;
+	bottom: 0;
+}
+
+@keyframes rabbit-atack {
+	6.25% {
+		width: 128px;
+		height: 170px;
+		background-position: -356px -22px
+	}
+	12.5% {
+		width: 108px;
+		height: 172px;
+		background-position: -596px -18px
+	}
+	
+	18.75 {
+		width: 162px;
+		height: 168px;
+		background-position: -929px -23px
+	}
+	
+	25% {
+		width: 99px;
+		height: 172px;
+		background-position: -48px -227px
+	}
+	
+	31.25% {
+		width: 103px;
+		height: 173px;
+		background-position: -322px -226px
+	}
+	
+	37.5% {
+		width: 104px;
+		height: 173px;
+		background-position: -608px -226px
+	}
+ 43.75% {
+		width: 152px;
+		height: 171px;
+		background-position: -929px -228px
+	}
+	50% {
+		width: 100px;
+		height: 171px;
+		background-position: -50px -436px
+	}
+	56.25% {
+		width: 137px;
+		height: 171px;
+		background-position: -358px -437px
+	}
+	62.5% {
+		width: 106px;
+		height: 171px;
+		background-position: -630px -436px
+	}
+	68.75% {
+		width: 151px;
+		height: 172px;
+		background-position: -930px -435px
+	}
+	75% {
+		width: 168px;
+		height: 172px;
+		background-position: -76px -644px
+	}
+	81.25% {
+		width: 169px;
+		height: 170px;
+		background-position: -359px -646px
+	}
+	87.5% {
+		width: 165px;
+		height: 169px;
+		background-position: -644px -646px
+	}
+	93.75% {
+		width: 137px;
+		height: 171px;
+		background-position: -929px -644px
+	}
+	100% {
+	background: url(../img/rabbit/Idle-sm1.png) -55px -16px no-repeat;
+	height: 170px;
+	width: 100px;
+	}
+	
+}
