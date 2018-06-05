@@ -4,23 +4,26 @@
 }
 
 body {
-	background-image: url(../img/bg.png);
+	background-image: url(../img/level1.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	overflow: hidden;
+	min-width: 1280px;
+	min-height: 720px;
+
 }
 
-.buttons {
+.buttons-example {
 	z-index: 2;
 	user-select: none;
 }
 
 button {
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
-	border: none;
+	    border: 2px solid #000;
 	outline: none;
 	background-color: tomato;
 	color: #fff;
@@ -28,7 +31,7 @@ button {
 	font-weight: 600;
 	cursor: pointer;
 	margin: 50px;
-	transition: all .2s ease;
+	transition: all .4s ease;
 	-webkit-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
@@ -36,6 +39,10 @@ button {
 
 button:hover {
 	background-color: red;
+	filter:  brightness(110%);
+	-webkit-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
 }
 
 .container {
@@ -280,4 +287,123 @@ canvas {
 left:150%;
 transition: left 7s;
 }
+
+
+.add-health{
+	display: none;
+    animation: health 1.5s steps(20) infinite;
+    background: url(../img/heart.png) no-repeat;
+    width: 183px;
+    height: 173px;
+    position: absolute;
+    left: 218px;
+    top: -150px;
+    z-index: 10;
+    background-size: contain;
+}
+
+@keyframes health {
+		100% {
+		top: 150px;
+    width: 30px;
+	}
 	
+}
+.add-health.active-health{
+	display: block;
+}
+
+.overlay-choice{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.choice-magic-modal{
+	background: url(../img/modal1.png) no-repeat;
+	background-size: cover;
+	width: 500px;
+	height: 500px;
+	z-index: 10;
+	position: relative;
+	    border: 3px solid #000;
+    border-radius: 50%;
+	-webkit-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+
+}
+
+.buttons-magic{
+	position: relative;
+	height: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons-magic p{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 44px;
+    padding: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: 'Permanent Marker', cursive;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.fire-btn{
+	position: absolute;
+    top: -40px;
+    margin: 0;
+    left: 40%;
+	background: url(../img/flame-magic.png) no-repeat;
+	background-size: cover;
+	
+    border-radius: 50%;
+	
+
+}
+.thunder-b{
+    position: absolute;
+    bottom: 42%;
+    margin: 0;
+    left: -40px;
+	background: url(../img/thunder-magic.png) no-repeat;
+	background-size: cover;
+}
+
+
+.ice-btn{
+    position: absolute;
+    bottom: 42%;
+    margin: 0;
+    right: -40px;
+	background: url(../img/ice-magic.png) no-repeat;
+	background-size: cover;
+}
+
+
+.health-btn{
+	position: absolute;
+    bottom: -40px;
+    margin: 0;
+    left: 40%;
+	background: url(../img/health-magic.png) no-repeat;
+	background-size: cover;
+	
+    border-radius: 50%;
+	
+
+}

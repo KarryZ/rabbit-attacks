@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </head>
 
 <body>
@@ -15,13 +16,29 @@
 <audio id="electro">
 <source src="./sound/elektro.mp3" type='audio/mpeg; codecs="mp3"'>
 </audio>
-<div class="buttons">
-		<button id="active" class="fire-btn">fire</button>
-    <button id="thunder" class="thunder-b">thunder</button>
-    <button id="go" class="go">run</button>
-     <button id="rabbit-damage" class="rabbit-damage">damage</button>
-     <button id="rabbit-die" class="rabbit-die">lose</button>
+
+<audio id="damage">
+<source src="./sound/damage1.mp3" type='audio/mpeg; codecs="mp3"'>
+</audio>
+<div class="buttons-example">
+	<button id="go" class="go">run</button>
+    <button id="rabbit-damage" class="rabbit-damage">damage</button>
+    <button id="rabbit-die" class="rabbit-die">lose</button>
 </div>
+<div class="overlay-choice">
+    
+    <div class="choice-magic-modal">
+        <div class="buttons-magic">
+        <button id="active" class="fire-btn"></button>
+        <button id="thunder" class="thunder-b"></button>
+        <button id="ice" class="ice-btn"></button>
+        <button id="health" class="health-btn"></button>
+        <p>Choice <br> Magic</p>
+    </div>
+    
+    </div>
+</div>
+
     
    
     <div class="container">
@@ -40,6 +57,7 @@
        
        
 -->
+   <div class="add-health"></div>
     <div class="rabbit"></div>
      <div class="anticharacter-container">
             <img class="ogr" src="./img/ogr.png" alt="">
