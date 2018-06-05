@@ -10,20 +10,37 @@
 </head>
 
 <body>
-    <audio id="audio-fire">
-  <source src="./sound/Crackling_Fire.mp3" type='audio/mpeg; codecs="mp3"'>
+   
+<!--audio-->
+<audio id="audio-fire">
+	<source src="./sound/Crackling_Fire.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
+
 <audio id="electro">
-<source src="./sound/elektro.mp3" type='audio/mpeg; codecs="mp3"'>
+	<source src="./sound/elektro1.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+<audio id="health">
+	<source src="./sound/health.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+<audio id="ice">
+	<source src="./sound/ice.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
 
 <audio id="damage">
-<source src="./sound/damage1.mp3" type='audio/mpeg; codecs="mp3"'>
+	<source src="./sound/damage1.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
+
+<audio id="magic-sound">
+	<source src="./sound/magic-btn.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
 <div class="buttons-example">
 	<button id="go" class="go">run</button>
     <button id="rabbit-damage" class="rabbit-damage">damage</button>
     <button id="rabbit-die" class="rabbit-die">lose</button>
+    <button id="button-magic" class="button-magic">magic</button>
 </div>
 <div class="overlay-choice">
     
@@ -64,6 +81,7 @@
         </div>
         <div class="fire"><img src="./img/fire.gif" alt=""></div>
         <div class="thunder"><img src="./img/thunder.gif" alt=""></div>
+        <div class="ice"><img src="./img/ice.png" alt=""></div>
     </div>
     
 <!--    	<canvas id="canvas"></canvas>-->

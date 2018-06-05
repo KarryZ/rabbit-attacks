@@ -5,39 +5,65 @@ buttonsMagic.addEventListener('click', function (event) {
 	let target = event.target;
 	event.stopPropagation;
 
-	if (target.className == 'fire-btn') {
-		$('.fire img').toggleClass('show');
+	 if (target.className == 'fire-btn') {
+		$('.overlay-choice').toggleClass('overlay-choice-active');
 		$('.rabbit').toggleClass('attack');
 		$('.rabbit').toggleClass('rabbit');
+		$('.fire img').toggleClass('show');
 		$('#audio-fire').trigger('play');
 		$('.buttons-magic').children().addClass("disable");
-		setTimeout(function () {
+			setTimeout(function () {
 			$('.attack').toggleClass('rabbit');
 			$('.rabbit').toggleClass('attack');
+			}, 1550);
+		
+		setTimeout(function () {
 			$('.fire img').toggleClass('show');
 			$('.buttons-magic').children().removeClass("disable");
-		}, 7000);
+		}, 3000);
 	}
 
 	else if (target.className == 'thunder-b') {
-		$('.thunder img').toggleClass('show');
+		$('.overlay-choice').toggleClass('overlay-choice-active');
 		$('.rabbit').toggleClass('attack');
 		$('.rabbit').toggleClass('rabbit');
+		$('.thunder img').toggleClass('show');
 		$("#electro").trigger('play');
 		$('.buttons-magic').children().addClass("disable");
 		//$('#audio').trigger('play');
+		
+		
 		setTimeout(function () {
 			$('.attack').toggleClass('rabbit');
 			$('.rabbit').toggleClass('attack');
 			$('.thunder img').toggleClass('show');
 			$('.buttons-magic').children().removeClass("disable");
-		}, 7000);
+		}, 3000);
+	}
+	else if (target.className == 'ice-btn') {
+		$('.overlay-choice').toggleClass('overlay-choice-active');
+		$('.rabbit').toggleClass('attack');
+		$('.rabbit').toggleClass('rabbit');
+		$('.ice img').toggleClass('show-ice');
+		$("#ice").trigger('play');
+		$('.buttons-magic').children().addClass("disable");
+		//$('#audio').trigger('play');
+		
+		setTimeout(function () {
+			$('.attack').toggleClass('rabbit');
+			$('.rabbit').toggleClass('attack');
+		}, 1550);
+		setTimeout(function () {
+			$('.ice img').toggleClass('show-ice');
+			$('.buttons-magic').children().removeClass("disable");
+		}, 2500);
 	}
 
 	else if (target.className == 'health-btn') {
+		$('.overlay-choice').toggleClass('overlay-choice-active');
 		$('.add-health').toggleClass('active-health');
 		
-		//$("#electro").trigger('play');
+		$("#health").trigger('play');
 		$('.buttons-magic').children().addClass("disable");
 		//$('#audio').trigger('play');
 		setTimeout(function () {
@@ -101,4 +127,19 @@ buttonsActive.addEventListener('click', function (event) {
 			$('.buttons-example').children().removeClass("disable");
 		}, 1000);
 	}
+	
+	else if (target.className == 'button-magic') {
+		
+		$('.overlay-choice').addClass('overlay-choice-active');
+		$("#magic-sound").trigger('play');
+		
+		
+	}
 });
+
+
+
+
+
+
+
