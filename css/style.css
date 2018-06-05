@@ -291,7 +291,7 @@ transition: left 7s;
 
 .add-health{
 	display: none;
-    animation: health 1.5s steps(20) infinite;
+    animation: health 1.5s steps(20) 1;
     background: url(../img/heart.png) no-repeat;
     width: 183px;
     height: 173px;

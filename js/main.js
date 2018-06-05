@@ -37,13 +37,13 @@ buttonsMagic.addEventListener('click', function (event) {
 	else if (target.className == 'health-btn') {
 		$('.add-health').toggleClass('active-health');
 		
-		$("#electro").trigger('play');
+		//$("#electro").trigger('play');
 		$('.buttons-magic').children().addClass("disable");
 		//$('#audio').trigger('play');
 		setTimeout(function () {
 			$('.add-health').toggleClass('active-health');;
 			$('.buttons-magic').children().removeClass("disable");
-		}, 7000);
+		}, 1500);
 	}
 
 });
