@@ -4,89 +4,194 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>game</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <title>The Legend Of Rabbit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/modal-task.css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </head>
 
 <body>
-   
-<!--audio-->
-<audio id="audio-fire">
+    <!--audio-->
+    <audio id="menuTheme" autoplay="">
+	<source src="./sound/menuTheme.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+    <audio id="gameTheme" loop>
+	<source src="./sound/gameTheme.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+    <audio id="monstrAttack">
+	<source src="./sound/monstrAttack.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+    <audio id="monstrHit">
+	<source src="./sound/monstrHit.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+    <audio id="monstrHitDamage">
+	<source src="./sound/monstrHitDamage.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
+
+    <audio id="audio-fire">
 	<source src="./sound/Crackling_Fire.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
 
-<audio id="electro">
+    <audio id="electro">
 	<source src="./sound/elektro1.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
 
-<audio id="health">
+    <audio id="health">
 	<source src="./sound/health.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
 
-<audio id="ice">
+    <audio id="ice">
 	<source src="./sound/ice.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
 
-<audio id="damage">
+    <audio id="damage">
 	<source src="./sound/damage1.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
 
-<audio id="magic-sound">
+    <audio id="magic-sound">
 	<source src="./sound/magic-btn.mp3" type='audio/mpeg; codecs="mp3"'> 
 </audio>
+    <audio id="miss-sound">
+	<source src="./sound/miss.mp3" type='audio/mpeg; codecs="mp3"'> 
+</audio>
 
-<div class="buttons-example">
-	<button id="go" class="go">run</button>
-    <button id="rabbit-damage" class="rabbit-damage">damage</button>
-    <button id="rabbit-die" class="rabbit-die">lose</button>
-    <button id="button-magic" class="button-magic">magic</button>
-</div>
-<div class="overlay-choice">
-    
-    <div class="choice-magic-modal">
-        <div class="buttons-magic">
-        <button id="active" class="fire-btn"></button>
-        <button id="thunder" class="thunder-b"></button>
-        <button id="ice" class="ice-btn"></button>
-        <button id="health" class="health-btn"></button>
-        <p>Choice <br> Magic</p>
-    </div>
-    
-    </div>
-</div>
 
-    
-   
-    <div class="container">
-      <!--   <div class="character-container">
-            <img class="hero" src="./img/hero-without-leg1.png" alt="">
-            <img class="hand" src="./img/hand.png" alt="">
-            <img class="left-leg" src="./img/left-leg.png" alt="">
-            <img class="right-leg" src="./img/right-leg.png" alt="">
-       
+    <!-- Main Menu-->
+    <div id="main-menu" class="main-menu">
+        <div class="falling-leaves">
+            <img class="menu-girl" src="img/girlHand.png" alt="girl">
+            <img class="menu-boy" src="img/boyHand.png" alt="boy">
+            <img class="menu-board" src="img/UI/level_select/bg.png" alt="bg">
         </div>
-        
-        
+        <div class="form-main">
+            <div class="form-div">
+                <form class="form" id="form1">
+                    <p class="name">
+                        <input type="text" class="feedback-input" placeholder="Enter your name" id="name" required/>
+                    </p>
 
-
-
-       
-       
--->
-   <div class="add-health"></div>
-    <div class="rabbit"></div>
-     <div class="anticharacter-container">
-            <img class="ogr" src="./img/ogr.png" alt="">
+                    <div class="button-play" onclick="goToStory()"></div>
+                </form>
+            </div>
         </div>
-        <div class="fire"><img src="./img/fire.gif" alt=""></div>
-        <div class="thunder"><img src="./img/thunder.gif" alt=""></div>
-        <div class="ice"><img src="./img/ice.png" alt=""></div>
+        <div class="end-game" id="end-game">
+            <div class="end-header win-header" id="end-header"></div>
+            <div class="table-background"></div>
+            <ul class="game-results-table" id='game-results-table'></ul>
+            <div class="new-game-btn" onclick="window.location.reload()"></div>
+
+        </div>
     </div>
-    
-<!--    	<canvas id="canvas"></canvas>-->
+
+    <!-- Story comics -->
+    <div class="story-wrapper" id="story-wrapper">
+        <article class="comic">
+            <div class="panel">
+                <p class="text top-left">One day...</p>
+                <p class="text bottom-right">...something amazing happened</p>
+            </div>
+            <div class="panel">
+            </div>
+            <div class="panel">
+                <p class="speech">You're beautiful</p>
+            </div>
+            <div class="panel">
+                <p class="text bottom-right">Love</p>
+            </div>
+            <div class="panel">
+                <p class="text top-left">Suddenly...</p>
+            </div>
+            <div class="panel"></div>
+            <div class="panel">
+                <p class="text bottom-right">Noooooo!</p>
+            </div>
+        </article>
+        <div class="button-skip" onclick="goToGame()"></div>
+    </div>
+
+    <!-- Game Panel-->
+    <div id="game-panel" class="game-panel">
+        <div class="user-name"></div>
+        <div class="hero-health-bar" id='heroHealthBar'></div>
+        <img src="img/heroHelthBar.png" class='hero-health-panel'>
+        <div class="monstr-name"></div>
+        <div class="monstr-health-bar" id='monstrHealthBar'></div>
+        <img src="img/monstrHelthBar.png" class='monstr-health-panel'>
+
+
+        <div class="buttons-example">
+            <button id="button-magic" class="button-magic">magic</button>
+        </div>
+        <div class="overlay-choice">
+
+            <div class="choice-magic-modal">
+                <div class="buttons-magic">
+                    <button id="active" class="fire-btn"></button>
+                    <button id="thunder" class="thunder-b"></button>
+                    <button id="ice" class="ice-btn"></button>
+                    <button id="health" class="health-btn"><span>1</span></button>
+                    <p>Choice <br> Magic</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="overlay-task">
+            <div class="task-modal">
+                <div class="task-container" id="task-container"></div>
+                <div class="submit-container">
+                    <div class="submit-answer" id="submit-answer" onclick="closeTask()">Cast spell</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="add-health"></div>
+            <div class="miss-attack"></div>
+            <div class="rabbit"></div>
+            <div id="canvasDiv" class="anticharacter-container"></div>
+            <div class="fire"><img src="./img/fire.gif" alt=""></div>
+            <div class="thunder"><img src="./img/thunder.gif" alt=""></div>
+            <div class="ice"><img src="./img/ice.png" alt=""></div>
+            <div class="monstreffect"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--    	<canvas id="canvas"></canvas>-->
+
     <script src="js/jquery.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/save-users.js"></script>
+
+    <script src="js/monsterNamesGenerator.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/menu.js"></script>
+
+
+
+    <script type="text/javascript" src="js/canvasMonstr.js"></script>
+    <script type="text/javascript" src="js/showResultTable.js"></script>
+    <script type="text/javascript" src="js/rabbitDieAnimation.js"></script>
+    <script type="text/javascript" src="js/nextLevel.js"></script>
+
+    <script type="text/javascript">
+        prepareCanvas(document.getElementById("canvasDiv"), 490, 220);
+
+    </script>
 </body>
 
 </html>

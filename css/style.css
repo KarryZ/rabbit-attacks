@@ -1,202 +1,249 @@
 * {
-	padding: 0px;
-	margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
-	background-image: url(../img/level1.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	overflow: hidden;
-	min-width: 1280px;
-	min-height: 720px;
-
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    min-width: 1280px;
+    min-height: 600px;
+    user-select: none;
 }
 
+/*Game panel*/
+
+.game-panel {
+    visibility: hidden;
+    background-image: url(../img/level1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 600px;
+    width: 100vw;
+    min-width: 1280px;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+
 .buttons-example {
-	z-index: 2;
-	user-select: none;
+    z-index: 2;
+    user-select: none;
+    position: absolute;
+    top: 0;
 }
 
 button {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	    border: 2px solid #000;
-	outline: none;
-	background-color: tomato;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 600;
-	cursor: pointer;
-	margin: 50px;
-	transition: all .4s ease;
-	-webkit-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-	box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    outline: none;
+    background-color: tomato;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 50px;
+    transition: all .4s ease;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
 }
 
 button:hover {
-	background-color: red;
-	filter:  brightness(110%);
-	-webkit-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+    background-color: red;
+    filter: brightness(110%);
+    -webkit-box-shadow: 0px 0px 59px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 59px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 59px 6px rgba(0, 0, 0, 0.75);
 }
 
 .container {
-	position: absolute;
-	left: 0px;
-	bottom: 10px;
-	width: 100%;
-	height: 200px;
-	display: flex;
-	justify-content: flex-end;
-	padding: 0px 150px;
-	box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 150px;
+    box-sizing: border-box;
 }
 
 .character-container {
-	width: 200px;
-	height: 200px;
-	position: relative;
+    width: 200px;
+    height: 200px;
+    position: relative;
 }
 
 .anticharacter-container {
-	width: 200px;
-	height: 200px;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	/*    background-color: red;  */
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /*    background-color: red;  */
 }
 
 .ogr {
-	width: 184px;
+    width: 184px;
 }
 
 .hero {
-	width: 138px;
-	position: relative;
-	z-index: 5;
+    width: 138px;
+    position: relative;
+    z-index: 5;
 }
 
 .hand {
-	width: 34px;
-	position: absolute;
-	top: 110px;
-	right: 80px;
-	z-index: 4;
-	transition: all .2s ease;
+    width: 34px;
+    position: absolute;
+    top: 110px;
+    right: 80px;
+    z-index: 4;
+    transition: all .2s ease;
 }
 
 .hand.active {
-	width: 34px;
-	position: absolute;
-	top: 87px;
-	right: 60px;
-	z-index: 4;
-	transform: rotate(-90deg);
+    width: 34px;
+    position: absolute;
+    top: 87px;
+    right: 60px;
+    z-index: 4;
+    transform: rotate(-90deg);
 }
 
 .left-leg {
-	position: absolute;
-	bottom: -12px;
-	left: 61px;
-	z-index: 3;
-	transition: all .2s ease;
-	width: 44px;
-	height: 37px;
+    position: absolute;
+    bottom: -12px;
+    left: 61px;
+    z-index: 3;
+    transition: all .2s ease;
+    width: 44px;
+    height: 37px;
 }
 
 .active-left {
-	transform: rotate(-12deg);
-	left: 71px;
+    transform: rotate(-12deg);
+    left: 71px;
 }
 
 .active-right {
-	transform: rotate(-18deg);
+    transform: rotate(-18deg);
 }
 
 .right-leg {
-	position: absolute;
-	bottom: -12px;
-	left: 30px;
-	z-index: 4;
-	transition: all .2s ease;
-	width: 44px;
-	height: 37px;
+    position: absolute;
+    bottom: -12px;
+    left: 30px;
+    z-index: 4;
+    transition: all .2s ease;
+    width: 44px;
+    height: 37px;
 }
 
 .fire {
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	bottom: 20px;
-	right: 150px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+    user-select: none;
 }
 
 .fire img {
-	opacity: 0;
-	width: 400px;
-	position: relative;
-	bottom: 250px;
-	right: 81px;
-	transition: all .4s ease;
+    opacity: 0;
+    width: 400px;
+    position: relative;
+    bottom: 250px;
+    right: 81px;
+    transition: all .4s ease;
 }
 
 .fire img.show {
-	opacity: 1;
+    opacity: 1;
 }
 
 .thunder {
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	bottom: 20px;
-	right: 150px;
-	transform: rotate(-50deg);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+    transform: rotate(-50deg);
+    user-select: none;
 }
 
 .thunder img {
-	opacity: 0;
-	width: 300px;
-	position: relative;
-	/* bottom: 250px; */
-	right: 45px;
-	transition: all .4s ease;
+    opacity: 0;
+    width: 300px;
+    position: relative;
+    /* bottom: 250px; */
+    right: 45px;
+    transition: all .4s ease;
 }
 
 .thunder img.show {
-	opacity: 1;
+    opacity: 1;
 }
-.ice{
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	bottom: 20px;
-	right: 150px;
+
+.disable {
+    pointer-events: none;
+}
+
+.ice {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+    user-select: none;
 }
 
 .ice img {
-	opacity: 0;
-	width: 250px;
-	position: relative;
-	bottom: -260px;
-	right: 10px;
-	transition: all .3s ease-in 1s;
+    opacity: 0;
+    width: 250px;
+    position: relative;
+    bottom: -260px;
+    right: 10px;
+    transition: all .3s ease-in 1s;
 }
 
-.ice img.show-ice{
-	opacity: 1;
-	bottom: -40px;
-}
-.disable {
-	pointer-events: none;
+.ice img.show-ice {
+    opacity: 1;
+    bottom: -40px;
 }
 
+.monstreffect{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    bottom: -70px;
+    left: 100px;
+    user-select: none;
+}
 
+.monstreffect img {
+    opacity: 0;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    left: -30px;
+    transition: all .4s ease;
+}
+
+.monstreffect img.show {
+    opacity: 1;
+}
 /*
 
 canvas { 
@@ -209,108 +256,103 @@ canvas {
 }*/
 
 .rabbit {
-	animation: default 1.5s steps(32) infinite;
-	background: url(../img/rabbit/idle4.png) -20px 10px no-repeat;
-	height: 200px;
-	width: 250px;
-	position: absolute;
-	left: 150px;
-	bottom: 0;
+    animation: default 1.5s steps(32) infinite;
+    background: url(../img/rabbit/idle4.png) -20px 10px no-repeat;
+    height: 200px;
+    width: 250px;
+    position: absolute;
+    left: 150px;
+    bottom: 0;
 
 }
 
 @keyframes default {
-	100% {
-		background-position: -8820px 10px;
-	}
+    100% {
+        background-position: -8820px 10px;
+    }
 }
 
 .attack {
-	animation: rabbit-atack 1.5s steps(16) infinite;
-	background: url(../img/rabbit/attack3.png) -20px 5px no-repeat;
-	width: 250px;
-	height: 200px;
-	position: absolute;
-	left: 150px;
-	bottom: 0;
+    animation: rabbit-atack 1.5s steps(16) infinite;
+    background: url(../img/rabbit/attack3.png) -20px 5px no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: 150px;
+    bottom: 0;
 }
 
 @keyframes rabbit-atack {
-		100% {
-		background-position: -4578px 5px;
-	}
-	
+    100% {
+        background-position: -4578px 5px;
+    }
+
 }
 
 
 
 .run {
-	animation: run 1s steps(24) infinite;
-	background: url(../img/rabbit/run.png) -20px 5px no-repeat;
-	width: 250px;
-	height: 200px;
-	position: absolute;
-	left: 150px;
-	bottom: 0;
+    animation: run 1s steps(24) infinite;
+    background: url(../img/rabbit/run.png) -20px 5px no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: 150px;
+    bottom: 0;
 }
 
 @keyframes run {
-		100% {
-		background-position: -6861px 5px;
-	}
-	
+    100% {
+        background-position: -6861px 5px;
+    }
+
 }
-
-
 
 
 .damage {
-	animation: damage .6s steps(16) infinite;
-	background: url(../img/rabbit/damage.png) -20px 5px no-repeat;
-	width: 250px;
-	height: 200px;
-	position: absolute;
-	left: 150px;
-	bottom: 0;
+    animation: damage .6s steps(16) infinite;
+    background: url(../img/rabbit/damage.png) -20px 5px no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: 150px;
+    bottom: 0;
 }
 
 @keyframes damage {
-		100% {
-		background-position: -4585px 5px;
-	}
-	
-}
+    100% {
+        background-position: -4585px 5px;
+    }
 
+}
 
 
 .lose {
-	animation: lose 1s steps(20) infinite;
-	background: url(../img/rabbit/lose.png) -20px 5px no-repeat;
-	width: 250px;
-	height: 200px;
-	position: absolute;
-	left: 150px;
-	bottom: 0;
+    animation: lose 1s steps(20) infinite;
+    background: url(../img/rabbit/lose.png) -20px 5px no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: 150px;
+    bottom: 0;
 }
 
 @keyframes lose {
-		100% {
-		background-position: -5728px 5px;
-	}
-	
+    100% {
+        background-position: -5728px 5px;
+    }
+
 }
-
-
 
 
 .run-away {
-left:150%;
-transition: left 7s;
+    left: 150%;
+    transition: left 7s;
 }
 
 
-.add-health{
-	display: none;
+.add-health {
+    display: none;
     animation: health 1.5s steps(20) 1;
     background: url(../img/heart.png) no-repeat;
     width: 183px;
@@ -323,56 +365,104 @@ transition: left 7s;
 }
 
 @keyframes health {
-		100% {
-		top: 150px;
+    100% {
+        top: 150px;
+        width: 30px;
+    }
+
+}
+
+.add-health.active-health {
+    display: block;
+}
+
+
+.miss-attack {
+    display: none;
+    animation: miss 1.5s steps(20) 1;
+    background: url(../img/miss.png) no-repeat;
     width: 30px;
-	}
-	
-}
-.add-health.active-health{
-	display: block;
-}
-
-.overlay-choice{
-	display: none;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	width: 100vw;
-	z-index: 10;
-	position: absolute;
-	top: 0;
-	right: 0;
-	background-color: rgba(0, 0, 0, 0.5);
+    height: 173px;
+    position: absolute;
+        left: 276px;
+    top: 76px;
+    z-index: 10;
+    background-size: contain;
 }
 
-.overlay-choice-active{
-	display: flex;
+@keyframes miss {
+    100% {
+        top: -150px;
+        width: 183px;
+    }
+
 }
 
-.choice-magic-modal{
-	background: url(../img/modal1.png) no-repeat;
-	background-size: cover;
-	width: 500px;
-	height: 500px;
-	z-index: 10;
-	position: relative;
-	    border: 3px solid #000;
+.miss-attack.active-miss {
+    display: block;
+}
+
+.health-btn span {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-	-webkit-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.health-btn-disabled {
+    user-select: none;
+}
+
+.overlay-choice {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-choice-active {
+    display: flex;
+}
+
+.choice-magic-modal {
+    background: url(../img/modal1.png) no-repeat;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    z-index: 10;
+    position: relative;
+    border: 3px solid #000;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 59px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 59px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 59px 6px rgba(0, 0, 0, 0.75);
 
 }
 
-.buttons-magic{
-	position: relative;
-	height: 100%;
-	display: flex;
+.buttons-magic {
+    position: relative;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.buttons-magic p{
+
+.buttons-magic p {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
@@ -387,48 +477,253 @@ box-shadow: 0px 0px 59px 6px rgba(0,0,0,0.75);
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    user-select: none;
 }
-.fire-btn{
-	position: absolute;
+
+.fire-btn {
+    position: absolute;
     top: -40px;
     margin: 0;
     left: 40%;
-	background: url(../img/flame-magic.png) no-repeat;
-	background-size: cover;
-	
+    background: url(../img/flame-magic.png) no-repeat;
+    background-size: cover;
+
     border-radius: 50%;
-	
+
 
 }
-.thunder-b{
+
+.thunder-b {
     position: absolute;
     bottom: 42%;
     margin: 0;
     left: -40px;
-	background: url(../img/thunder-magic.png) no-repeat;
-	background-size: cover;
+    background: url(../img/thunder-magic.png) no-repeat;
+    background-size: cover;
 }
 
 
-.ice-btn{
+.ice-btn {
     position: absolute;
     bottom: 42%;
     margin: 0;
     right: -40px;
-	background: url(../img/ice-magic.png) no-repeat;
-	background-size: cover;
+    background: url(../img/ice-magic.png) no-repeat;
+    background-size: cover;
 }
 
 
-.health-btn{
-	position: absolute;
+.health-btn {
+    position: absolute;
     bottom: -40px;
     margin: 0;
     left: 40%;
-	background: url(../img/health-magic.png) no-repeat;
-	background-size: cover;
-	
+    background: url(../img/health-magic.png) no-repeat;
+    background-size: cover;
     border-radius: 50%;
-	
+}
 
+
+/*Health bar*/
+
+.hero-health-bar {
+    position: absolute;
+    top: 55px;
+    left: 155px;
+    width: 210px;
+    height: 30px;
+    background: -webkit-linear-gradient(to top, #0c0, #0f0);
+    background: linear-gradient(to top, #090, #0F0);
+    border-radius: 5px;
+}
+
+.hero-health-panel {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 400px;
+    height: 150px;
+}
+
+.monstr-health-bar {
+    position: absolute;
+    top: 55px;
+    right: 135px;
+    width: 210px;
+    height: 30px;
+    background: -webkit-linear-gradient(to top, #0c0, #0f0);
+    background: linear-gradient(to top, #090, #0F0);
+    border-radius: 5px;
+}
+
+.monstr-health-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 150px;
+}
+
+/*characters names above health panel*/
+
+.user-name {
+    position: absolute;
+    top: 30px;
+    left: 180px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.monstr-name {
+    position: absolute;
+    top: 30px;
+    right: 160px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/*Task*/
+.task-header {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+}
+
+.task-word {
+    text-align: center;
+    position: absolute;
+    color: cornflowerblue;
+    top: 30%;
+}
+
+.task2-answer, .task1-answer{
+    color: #3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 3px solid gray;
+}
+
+.task2-answer:focus, .task1-answer{
+    background: #fff;
+    box-shadow: 0;
+    border: 3px solid #5cbea4;
+    color: #3a4649;
+    outline: none;
+    padding: 10px 10px 10px 54px;
+}
+
+
+/* Game results*/
+
+.end-game{
+	display: none;
+}
+.show-end-container{
+	display: block;
+  background-color: rgba(212, 126, 72, 0.5);
+    width: 325px;
+    height: 261px;
+    float: left;
+    left: 742px;
+    position: relative;
+    z-index: 9999;
+    top: 320px;
+    margin-left: -260px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+.end-header{
+	  background-repeat: no-repeat;
+    background-size: contain;
+    width: 180px;
+    height: 78px;
+    margin: -50px auto auto;
+	
+}
+
+.win-header{
+	background-image: url(../img/UI/you_win/header.png);
+}
+
+.lose-header{
+	background-image: url(../img/UI/you_lose/header.png);
+}
+
+.new-game-btn{
+	  background-image: url(../img/UI/btn/restart.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 66px;
+    height: 66px;
+    cursor: pointer;
+    position: absolute;
+    bottom: -74px;
+    left: 129.5px;
+}
+
+.game-results-table{
+	list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    align-items: center;
+    color: #fff;
+}
+
+.game-results-table li{
+	  display: flex;
+    width: 90%;
+    justify-content: space-around;
+		margin-bottom: 5px;
+}
+.game-results-table li span:first-child{
+	  width: 80px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+.game-results-table li span:nth-child(2){
+	width: 100px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+.game-results-table li:nth-child(even){
+	background-color: rgba(189,189,189 ,0.3);
+}
+
+.disapearMonstr{
+    animation: pulse 3s;
+}
+
+@keyframes pulse{
+	 0% {
+		 opacity:1;
+	 }
+	 
+	 50%{
+		 opacity:0;
+	 }
+	 
+	 100% {
+		 opacity:0;
+	 }
+}
+
+@media all and (max-width: 1280px) {
+  body{
+    overflow-x: scroll;
+}
 }

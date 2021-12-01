@@ -1,0 +1,126 @@
+.overlay-task {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-task-open {
+	display: flex;
+}
+
+.task-modal {
+	width: 80vw;
+	max-width: 1280px;
+	height: 80vh;
+	background-color: rgba(245,245,245 , 0.9);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	    border-radius: 10px;
+    border: 5px solid #314448;
+}
+
+.task-container {
+	width: 90%;
+	height: 70%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-container-inner{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.equation{
+ font-size: 30px;
+  margin-right: 25px;
+}
+
+.submit-container {
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit-answer {
+	background-image: url(../img/UI/btn/send-answer.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 250px;
+	height: 90px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;
+	transition: all .4s ease;
+	user-select: none;
+    color: #fff;
+    font-family: arial;
+    font-size: 24px;
+}
+
+.submit-answer:hover {
+	background-image: url(../img/UI/btn/send-answer-hower.png);
+}
+
+
+.task1-description{
+	font-size: 25px;
+	font-family: cursive;
+	font-weight: bold;
+}
+
+.equation-container{
+	display: flex;
+	align-items: center;
+}
+
+#wordblock {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* prevent text selection */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}  
+
+
+#wordblock li {
+  margin: 3px 3px 3px 0;
+  padding: 1px;
+  width: 40px;
+  float: left;
+  font-size: 3em;
+  text-align: center;
+  cursor: pointer;
+  font-family: arial;
+  background-color: #5cbea4;
+    border-radius: 20%;
+  color: #fff;
+}
+
+.task-correct-icon{
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/correct.png);
+    background-size: contain;
+
+}
